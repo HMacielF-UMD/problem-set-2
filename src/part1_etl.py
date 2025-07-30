@@ -6,6 +6,7 @@ PART 1: ETL
 
 import os
 import pandas as pd
+import src.part4_catplot as part4
 
 def create_directories(directories):
     """
@@ -37,4 +38,8 @@ def extract_transform():
     charge_counts = arrest_events.groupby(['charge_degree']).size().reset_index(name='count')
     charge_counts_by_offense = arrest_events.groupby(['charge_degree', 'offense_category']).size().reset_index(name='count')
     
-    return pred_universe, arrest_events, charge_counts, charge_counts_by_offense
+    felony_charge = part4.create_felony_charge(arrest_events)
+    pred_universe_merged = part4.merge_felony_charge(pred_universe, felony_charge)    
+
+    # Returns the dataframes    
+    return pred_universe, arrest_events, charge_counts, charge_counts_by_offense, pred_universe_merged

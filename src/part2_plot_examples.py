@@ -159,3 +159,4 @@ def scatterplot(pred_universe):
                          color='b', 
                          dashes=(2, 2))
     plt.savefig('./data/part2_plots/scatterplot5.png', bbox_inches='tight')
+    plt.close('all')
