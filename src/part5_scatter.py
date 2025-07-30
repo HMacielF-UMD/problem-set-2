@@ -28,7 +28,8 @@ def scatterplot_felony_nonfelony(pred_universe):
     plt.savefig('./data/part5_plots/scatter_felony_nonfelony.png', bbox_inches='tight')
     plt.close('all')
 
-    print("The group of dots on the right side of the plot represents individuals with high predictions for both felony and non-felony rearrest, indicating they are at a higher risk of reoffending.")
+    print("The group of dots on the right side of the plot represents individuals with high predictions for felony rearrest,\
+           indicating they are at a higher risk of reoffending.")
 
 
 # 2. Create a scatterplot where the x-axis is prediction for felony rearrest and the y-axis is whether someone was actually rearrested.
@@ -50,4 +51,5 @@ def scatterplot_felony_rearrest(pred_universe):
     plt.savefig('./data/part5_plots/scatter_felony_rearrest.png', bbox_inches='tight')
     plt.close('all')
 
-    print("The plot suggests that the model may not be well-calibrated, as there are many instances where high predictions do not correspond to actual rearrests, indicating potential overestimation of risk.")
+    print("The plot suggests that the model may not be well-calibrated, as there are many instances where high predictions do not \
+          correspond to actual rearrests, indicating potential overestimation of risk.")

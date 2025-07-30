@@ -89,7 +89,9 @@ def cat_plot_nonfelony(pred_universe_merged):
     plt.savefig('./data/part4_plots/catplot_nonfelony_rearrest.png', bbox_inches='tight')
     plt.close('all')
 
-    print("The difference between the plots may be explained by the fact that individuals with felony charges are generally considered to have a higher risk of reoffending, which is reflected in the higher predicted probabilities for felony rearrest compared to non-felony rearrest.")
+    print(" What might explain the difference betweenn the two plots are the consequences; \
+    non felony charges are more likely to be repeated by all while, felony are more likely for those that already commited it.\
+    I believe this is because those without felony charges are scared of the consequences.")
 
 
 # 3. Repeat the plot from 1, but hue by whether the person actually got rearrested for a felony crime
@@ -110,9 +112,9 @@ def cat_plot_hue(pred_universe_merged):
     sns.catplot(data=pred_universe_merged, 
                  x='has_felony_charge', 
                  y='prediction_felony', 
-                 hue='has_felony_charge', 
+                 hue='y_felony', 
                  kind='bar')
     plt.savefig('./data/part4_plots/catplot_felony_rearrest_hue.png', bbox_inches='tight')
     plt.close('all')
 
-    print("The higher predicted probability for arrestees with a current felony charge who did not get rearrested for a felony crime compared to those with a misdemeanor charge who did get rearrested suggests that the model may be capturing the inherent risk associated with felony charges, even if the individual did not reoffend. This indicates that the model is sensitive to the severity of charges rather than just past behavior.")
+    print("It means that they are more likely to commit another felony charge. I believe this realated to them already knowing the system/consequences.")
